@@ -1,17 +1,13 @@
 <?php
 
-use App\Models\item;
+use App\Models\Keluarga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('items', function () {
+Route::get('keluargas', function () {
 
-    return Item::paginate(5);
+    return Keluarga::paginate(5);
     
 });
 
-Route::get('items/{item}', function ($id) {
-
-    return Item::find($id);
-    
-});
+Route::get('keluargas/{keluarga}',[KeluargaController::class, 'search']);

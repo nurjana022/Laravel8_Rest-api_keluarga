@@ -13,12 +13,10 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('keluargas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('deskripsi')->nullable();
-            $table->string('harga')->default(0);
-            $table->boolean('is_active')->default(false);
+            $table->string('jenis_kelamin')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('keluargas');
     }
 }
